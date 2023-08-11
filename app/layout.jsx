@@ -1,4 +1,4 @@
-import { Children } from "react";
+import { Navbar } from "@components/Navbar";
 import "../styles/globals.css";
 
 export const metadata = {
@@ -6,17 +6,22 @@ export const metadata = {
   description: "Discover and share chatGPT prompts around the web",
 };
 
-function RootLayout() {
+function RootLayout({children}) {
   return (
     <html lang="en">
       <body>
         <div className="main">
           <div className="gradient" />
         </div>
-        <main className="app">{Children}</main>
+              <main className="app">
+                  <Navbar/>
+                  {children}
+              </main>
       </body>
     </html>
   );
 }
 
-export default layout;
+export default RootLayout;
+
+//children???
